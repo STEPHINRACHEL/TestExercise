@@ -11,7 +11,7 @@ Install
 ### Exercise 1
 Execute from the root of this repository
 ```
-python3 count_number_backward.py` 
+python3 count_number_backward.py
 ```
 
 ### Exercise 2
