@@ -9,7 +9,7 @@ Install
 - Chrome / Firefox / Edge / Safari Webdrivers
 
 ### Exercise 1
-Run
+Execute from the root of this repository
 ```
 python3 count_number_backward.py` 
 ```
@@ -20,6 +20,7 @@ python3 count_number_backward.py`
 , optional env var , default value is set to `chrome`
 
 
+Execute from the root of this repository
 ```
 pytest test_e_shop.py --verbose --capture=no
 ```
