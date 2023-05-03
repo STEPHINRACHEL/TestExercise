@@ -8,11 +8,17 @@ Install
 - Chrome / Firefox / Edge / Safari Webdrivers
 
 ### Exercise 1
-
-> Run `python3 count_number_backward.py` from the root of this repository
+Run
+```
+python3 count_number_backward.py` 
+```
 
 ### Exercise 2
 
-> Optional env var , chrome is set as default
-- export BROWSER=edge 
-> Run `pytest test_e_shop.py --verbose --capture=no`
+`export BROWSER=edge `
+, optional env var , default value is set to `chrome`
+
+
+```
+pytest test_e_shop.py --verbose --capture=no
+```
