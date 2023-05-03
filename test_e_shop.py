@@ -89,9 +89,10 @@ def test_add_two_most_expensive_items_to_cart():
             except:
                 print(f"Could not add item {i+1} to the cart")
 
+        # Navigate to cart page
         cart_link = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "nav-cart-count-container")))
         cart_link.click()
-        time.sleep(1)
+        time.sleep(1)  # Wait for the cart page to load
         cart_title = driver.find_element(By.XPATH, '//div[@id="sc-active-cart"]/descendant::div[@class="a-row"]/h1').text
         assert cart_title.strip('\n') == "Shopping Cart"  # Verify if cart page is displayed
 
@@ -110,3 +111,4 @@ def test_add_two_most_expensive_items_to_cart():
     finally:
         # Close the browser
         driver.quit()
+        
