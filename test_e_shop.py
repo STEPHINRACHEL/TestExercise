@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 
-# Extract price value part from item price string
+# Extract price value from the string
 def getPrice(price):
     return price.strip('$').split('.')[0]
 
@@ -42,7 +42,7 @@ def test_add_two_most_expensive_items_to_cart():
             search_box.send_keys("backpack")
             driver.find_element(By.ID, "nav-search-submit-button").submit()
         except:
-            # If searchbox was not located using above ID
+            # If search_box is not located using above ID
             search_box = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'nav-bb-search')))
             search_box.send_keys("backpack")
             driver.find_element(By.XPATH, '//input[@value="Go"]').click()
@@ -63,8 +63,9 @@ def test_add_two_most_expensive_items_to_cart():
         search_result = WebDriverWait(driver, 10).until((EC.presence_of_all_elements_located((By.XPATH,
             '//div[@id="s-skipLinkTargetForMainSearchResults"]/following-sibling::span[@data-component-type="s-search-results"]/div/div[@data-component-type="s-search-result"]'))))
         assert (len(search_result)) != 0
+
         item_price_elements = WebDriverWait(driver, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//span[@class="a-price"]/child::span/span[@class="a-price-whole"]')))
-        # List of item prices
+        # Item prices in the descending order
         item_prices = [price.text.strip('.') for price in item_price_elements if price.text != '']
 
         # Add 2 most expensive item to cart
@@ -92,9 +93,12 @@ def test_add_two_most_expensive_items_to_cart():
         cart_link.click()
         time.sleep(1)
         cart_title = driver.find_element(By.XPATH, '//div[@id="sc-active-cart"]/descendant::div[@class="a-row"]/h1').text
-        assert cart_title.strip('\n') == "Shopping Cart"
+        assert cart_title.strip('\n') == "Shopping Cart"  # Verify if cart page is displayed
+
+        # List of elements with item details including price
         cart_item_price_elements = driver.find_elements(By.XPATH, '//form[@id="activeCartViewForm"]/descendant::p[@class="a-spacing-mini"]/span')
-        assert len(cart_item_price_elements) == 2
+        assert len(cart_item_price_elements) == 2  # Verify only 2 elements are added to the cart
+        # Prices of items added in the cart
         cart_item_prices = [price.text for price in cart_item_price_elements]
 
         cart_price = list(map(getPrice, cart_item_prices))
@@ -104,4 +108,5 @@ def test_add_two_most_expensive_items_to_cart():
         assert cart_price == item_price
 
     finally:
+        # Close the browser
         driver.quit()
