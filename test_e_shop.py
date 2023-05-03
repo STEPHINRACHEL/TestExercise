@@ -106,7 +106,7 @@ def test_add_two_most_expensive_items_to_cart():
         cart_price.sort()
         item_price = item_prices[:2]
         item_price.sort()
-        assert cart_price == item_price
+        assert cart_price == item_price  # Verify if most expensive items are added to cart
 
     finally:
         # Close the browser
