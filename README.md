@@ -1,7 +1,8 @@
 # TestExercise
-This repo contains a small test for verifying an e-commerce site works as expected.
+This repo contains a functionality test for verifying an e-commerce site.
 
 ### Pre-requisite
+
 Install
 - Python3
 - Selenium Webdriver
