@@ -1,4 +1,4 @@
-# TestExercise
+# Test Automation using Python and Selenium
 This repository contains a functionality test for verifying an e-commerce site.
 
 ### Pre-requisite
