@@ -12,8 +12,10 @@ Install
 
 #### Environment variable
 
-`export BROWSER=edge ` </br>
-This is optional and default browser is set to Chrome.
+1. Set this optional environment variable if you want to change browser and default browser is set to Chrome.
+```
+export BROWSER=edge 
+```
 
 
 
