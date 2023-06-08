@@ -1,5 +1,5 @@
 # TestExercise
-This repo contains a functionality test for verifying an e-commerce site.
+This repository contains a functionality test for verifying an e-commerce site.
 
 ### Pre-requisite
 
@@ -8,16 +8,13 @@ Install
 - Selenium Webdriver
 - Chrome / Firefox / Edge / Safari Webdrivers
 
-### Exercise 1
-Execute from the root of this repository
-```
-python3 count_number_backward.py
-```
+### How to run
 
-### Exercise 2
+#### Environment variable
 
-`export BROWSER=edge `
-, optional env var , default value is set to `chrome`
+`export BROWSER=edge ` </br>
+This is optional and default browser is set to Chrome.
+
 
 
 Execute from the root of this repository
