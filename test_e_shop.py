@@ -61,7 +61,7 @@ def test_add_two_least_expensive_items_to_cart():
         driver.find_element(By.ID, "a-autoid-0-announce").click()
 
 
-        # Click on Price:Low to High filter menu
+        # Click on Price:High to Low filter menu
         sort_high_to_low = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "s-result-sort-select_2")))
         sort_high_to_low.click()
 
